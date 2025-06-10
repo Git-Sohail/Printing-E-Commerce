@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Product - Product Information</title>
+    <link rel="stylesheet" href="css/product.css">
+    <style>
+        /* Reset some default styles for consistency */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.product-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-container img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.product-details h1 {
+    color: #333;
+}
+
+.product-description {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-details h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-details ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.product-details li {
+    color: #666;
+}
+
+.product-price {
+    color: #333;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+    background-color: #217dbb;
+}
+
+    </style>
+</head>
+
+<body>
+    
+<!-- Product Information Container -->
+<div class="product-container">
+    <!-- Product Image -->
+    <img src="image/p.11.png" alt="Amazing Product">
+
+    <!-- Product Details -->
+    <div class="product-details">
+        <h1>Amazing Product</h1>
+        <p class="product-description">Experience the extraordinary with our Amazing Product. This cutting-edge
+            technology is designed to redefine your expectations.</p>
+
+        <!-- Product Features -->
+        <h2>Key Features:</h2>
+        <ul>
+            <li>Revolutionary Technology</li>
+            <li>High-Resolution Display</li>
+            <li>Ultra-Fast Processing</li>
+            <li>Wireless Connectivity</li>
+            <li>Long-lasting Battery</li>
+        </ul>
+
+        <!-- Product Price -->
+        <p class="product-price">Price: $499.99</p>
+
+        <!-- Add to Cart Button -->
+        <button class="add-to-cart-button">Add to Cart</button>
+    </div>
+</div>
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+        // Get the "Add to Cart" button
+        const addToCartButton = document.querySelector('.add-to-cart-button');
+    
+        // Add a click event listener to the button
+        addToCartButton.addEventListener('click', function () {
+            // Display a simple alert (replace this with your actual cart functionality)
+            alert('Product added to cart!');
+    
+            // You can also perform additional actions here, like updating a cart counter or making an API request.
+        });
+    });
+    </script>
+</body>
+
+</html>

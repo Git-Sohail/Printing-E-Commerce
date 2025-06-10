@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Style1.CSS" alte="Contact">
+    <style>
+        body{
+    margin: 0;
+    font-family: Poppins;
+}
+a{
+    color: unset;
+    text-decoration: none;
+}
+.container{
+    width: 900px;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    padding-top: 10px;
+}
+.title{
+    font-size: xx-large;
+    padding: 20px 0;
+}
+.listProduct .item img{
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+}
+.listProduct{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.listProduct .item{
+    background-color: #EEEEE6;
+    padding: 20px;
+    border-radius: 20px;
+}
+.listProduct .item h2{
+    font-weight: 500;
+    font-size: large;
+}
+.listProduct .item .price{
+    letter-spacing: 7px;
+    font-size: small;
+}
+/* detail page */
+
+.detail{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    text-align: left;
+}
+.detail .image img{
+    width: 100%;
+}
+.detail .image{
+    position: relative;
+}
+.detail .image::before{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    content: '';
+    background-color: #94817733;
+    z-index: -1;
+    border-radius: 190px 100px 170px 180px;
+    left: calc(50% - 150px);
+    top: 50px;
+
+}
+.detail .name{
+    font-size: xxx-large;
+    padding: 40px 0 0 0;
+    margin: 0 0 10px 0;
+}
+.detail .price{
+    font-weight: bold;
+    font-size: x-large;
+    letter-spacing: 7px;
+    margin-bottom: 20px;
+}
+.detail .buttons{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.detail .buttons button{
+    background-color: #eee;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    font-family: Poppins;
+    font-size: large;
+}
+.detail .buttons svg{
+    width: 15px;
+}
+.detail .buttons span{
+    background-color: #555454;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+.detail .buttons button:nth-child(2){
+    background-color: #2F2F2F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eee;
+    box-shadow: 0 10px 20px #2F2F2F77;
+}
+.detail .description{
+    font-weight: 300;
+}
+
+
+    </style>
+</head>
+<header>
+    <!--<b><h1>Printer Online Store</h1></b>-->
+    <a class="Printer" href="home.html">
+    <img src="image/printer/logo_large.png" height="150" width="500"></a>
+    </header>
+</header>
+
+<nav>
+    <li><a href="/home.html">Home</a></li>
+        <li><a class="active" href="/Product Info.html">Product</a></li>
+        <li><a href="/Blog.html">Blog</a></li>
+        <li><a href="/Research.html">Research</a></li>
+        <li><a href="/about us.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+</nav>
+    <div class="container">
+        <div class="title">PRODUCT DETAIL</div>
+        <div class="detail">
+            <div class="image">
+                <img src="">
+            </div>
+            <div class="content">
+                <h1 class="name"></h1>
+                <div class="price"></div>
+                <div class="buttons">
+                    <button>Check Out</button>
+                    <button>Add To Cart 
+                        <span>
+                            <svg class="" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <div class="description"></div>
+            </div>
+        </div>
+
+        <div class="title">Similar product</div>
+        <div class="listProduct"></div>
+    </div>
+
+    
+
+    <script>
+        let products = null;
+        // get datas from file json
+        fetch('products.json')
+            .then(response => response.json())
+            .then(data => {
+                products = data;
+                showDetail();
+        })
+
+        function showDetail(){
+    // remove datas default from HTML
+        let detail = document.querySelector('.detail');
+        let listProduct = document.querySelector('.listProduct');
+        let productId =  new URLSearchParams(window.location.search).get('id');
+        let thisProduct = products.filter(value => value.id == productId)[0];
+        //if there is no product with id = productId => return to home page
+        if(!thisProduct){
+            window.location.href = "/";
+        }
+
+        detail.querySelector('.image img').src = thisProduct.image;
+        detail.querySelector('.name').innerText = thisProduct.name;
+        detail.querySelector('.price').innerText = '$' + thisProduct.price;
+        detail.querySelector('.description').innerText = '$' + thisProduct.description;
+
+
+        (products.filter(value => value.id != productId)).forEach(product => {
+            let newProduct = document.createElement('a');
+            newProduct.href = '/detail.html?id=' + product.id;
+            newProduct.classList.add('item');
+            newProduct.innerHTML = 
+            `<img src="${product.image}" alt="">
+            <h2>${product.name}</h2>
+            <div class="price">$${product.price}</div>`;
+            listProduct.appendChild(newProduct);
+        });
+    }
+
+    </script>
+</body>
+</html>

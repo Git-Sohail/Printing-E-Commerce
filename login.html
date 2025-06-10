@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Printer Store</title>
+    <link rel="stylesheet" href="Style1.CSS" alte="Contact">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        body{
+            font-family: 'Poppins', sans-serif;
+            background-image: url(image/login.jpeg);
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+        
+        #algn{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #container{
+            border: 2px solid white;
+            border-radius: 10px;
+            width: 320px;
+            height: 340px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        #container .head{
+            font-weight: 700;
+            font-size: larger;
+        }
+        
+        .input-container{
+            display: flex;
+            flex-direction: column;
+            width: 265px;
+        }
+        
+        .input-container .inpt{
+            padding: 10px;
+            margin: 5px 10px;
+            border: 2px solid white;
+            border-radius: 25px;
+            background-color: transparent;
+            color: white;
+        }
+        
+        ::placeholder {
+            font-weight: 600;
+            color: white;
+            opacity: 1;
+        }
+        
+        .rem-forgot{
+            display: flex;
+            justify-content: space-around;
+            column-gap: 10px;
+            font-size: 11px;
+            font-weight: 400;
+            margin: 8px;
+        }
+        
+        .rem{
+            display: flex;
+            align-items: center;
+        }
+        
+        .rem-forgot span a{
+            text-decoration: none;
+            color: white;
+        }
+        
+        .rem-forgot span a:hover{
+            color: #ffc3d2;
+        }
+        
+        .input-container .btn{
+            margin: 0 12px;
+            padding: 10px 0;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+        }
+        
+        .input-container .btn:hover{
+            background-color: #ffc3d2;
+        }
+        
+        #container .footer{
+            font-size: 11px;
+            font-weight: 400;
+        }
+        
+        #container .footer a{
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            margin: 0 5px;
+        }
+        
+        #container .footer a:hover{
+            color: #ffc3d2;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <header>
+    <!--<b><h1>Printer Online Store</h1></b>-->
+    <a class="Printer" href="home.html">
+    <img src="image/printer/logo_large.png" height="150" width="500"></a>
+    </header>
+</header>
+
+<nav>
+     <li><a href="/home.html">Home</a></li>
+        <li><a href="/Product Info.html">Product</a></li>
+        <li><a href="/Blog.html">Blog</a></li>
+        <li><a href="./Research.html">Research</a></li>
+        <li><a href="/about us.html">About Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+
+</nav>
+
+<div>
+    <div id="algn">
+        <div id="container">
+            <!-- Login Page -->
+            <p class="head">Login</p>
+            <form action="/" class="input-container">
+                <input type="email" placeholder="Enter email" class="inpt" required>
+                <input type="password" placeholder="Enter password" class="inpt" required>
+                <div class="rem-forgot">
+                    <div class="rem">
+                        <input type="checkbox" id="rem-tik">
+                        <label for="rem-tik">Remember me</label>
+                    </div>
+                    <span><a href="#">Forgot password</a></span>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="footer">Don't have an account? <a href="register.html">Register</a></p>
+        </div>
+        
+        <!-- Register Page -->
+        <div id="container" style="display: none;">
+            <p class="head">Register</p>
+            <form action="/" class="input-container">
+                <input type="text" placeholder="Enter your full name" class="inpt" required>
+                <input type="email" placeholder="Enter your email" class="inpt" required>
+                <input type="password" placeholder="Choose a password" class="inpt" required>
+                <input type="password" placeholder="Confirm password" class="inpt" required>
+                <button type="submit" class="btn">Register</button>
+            </form>
+            <p class="footer">Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var loginForm = document.querySelector('#container:nth-child(1)');
+        var registerForm = document.querySelector('#container:nth-child(2)');
+
+        document.querySelector('a[href="register.html"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'flex';
+        });
+
+        document.querySelector('a[href="login.html"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            loginForm.style.display = 'flex';
+            registerForm.style.display = 'none';
+        });
+
+        // Add this part to handle successful login
+        document.querySelector('form[action="/"]').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Assuming your authentication is successful
+            alert('Login successful!');
+
+            // Add the following line to redirect to Product Info.html after successful login
+            window.location.href = 'Product Info.html';
+        });
+    });
+
+</script>
+
+
+<footer>
+    &copy; 2024 Printer Online. All rights reserved.
+</footer>
+</html>
+</body>

@@ -1,0 +1,59 @@
+[
+    {
+        "id": 1,
+        "name":" Epson L805",
+        "price": 200,
+        "image": "img/2.png",
+        "description": "The L805s integrated Wi-Fi support and expanded colour gamut of 6 inks brings you ease of printing from your mobile devices over a wireless network so you can print low-cost, lab-quality photos at your convenience."
+    },
+    {
+        "id": 2,
+        "name":" Canon PIXMA G4500",
+        "price": 250,
+        "image": "img/1.png",
+        "description": "The Canon PIXMA G4500 is an all-in-one inkjet printer known for its cost-effective printing with a refillable ink tank system, wireless connectivity, and high-volume capabilities."
+    },
+    {
+        "id": 3,
+        "name":" Pixma",
+        "price": 290,
+        "image": "img/3.png",
+        "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+    },
+    {
+        "id": 4,
+        "name":" LG",
+        "price": 200,
+        "image": "img/4.png",
+        "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+    },
+    {
+        "id": 5,
+        "name":" Croma",
+        "price": 300,
+        "image": "img/5.png",
+        "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+    },
+    {
+        "id": 6,
+        "name":" HP",
+        "price": 200,
+        "image": "img/6.png",
+        "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+    },
+    {
+        "id": 7,
+        "name":" DELL",
+        "price": 200,
+        "image": "img/7.png",
+        "description": "Expertly rendered by Carl Hansen & Søn, the lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric."
+    },
+    {
+        "id": 8,
+        "name":" CG 18061",
+        "price": 200,
+        "image": "img/08.png",
+        "description": "CG 18061 refers to a product, device, or item, I recommend checking with the manufacturer or providing more details for a more accurate and helpful response."
+    }
+
+]
